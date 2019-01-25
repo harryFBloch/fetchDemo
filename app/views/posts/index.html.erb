@@ -10,8 +10,17 @@
   </thead>
 
   <tbody>
+
+    <h5>Add New Post</h5>
+    <%= form_for @post do |f| %>
+      <%= f.text_field :content %>
+      <%= f.submit  "new Post"%>
+    <% end %>
+    <br>
+
     <% @posts.each do |post| %>
       <tr>
+        <td><%= post.content %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -19,7 +28,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
