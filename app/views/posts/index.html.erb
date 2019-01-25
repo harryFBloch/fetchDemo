@@ -19,7 +19,7 @@
     <br>
 
     <% @posts.each do |post| %>
-      <tr>
+      <tr id = "posts">
         <td><%= post.content %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
